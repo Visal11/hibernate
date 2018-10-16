@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Table(name= "tb_student")
 @Entity(name= "Student_Entity")
+//NamedQuery
 @NamedQuery(name="StudentGetAllNameQuery",query = "SELECT se from Student_Entity se")
 public class Student {
     @Id

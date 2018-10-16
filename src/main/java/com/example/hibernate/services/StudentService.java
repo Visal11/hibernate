@@ -19,17 +19,24 @@ public class StudentService {
     public StudentService() {
     }
 
+    //function for save information of student
     public void save(Student student){
       entityManager.persist(student);
     }
 
+    //function for findOneStudent information of student
     public Student findOneStudent(Long id){
       return entityManager.find(Student.class,id);
     }
 
-     public List<Student> getAll(){
-//         TypedQuery query= entityManager.createQuery("select se from Student_Entity se", Student.class);
-//         return query.getResultList();
+    //function for getAll information of student
+    public List<Student> getAll(){
+     //Form1
+     /*TypedQuery query= entityManager.createQuery("select se from Student_Entity se", Student.class);
+     return query.getResultList();*/
+
+     //Form2
+       //Apply NamedQuery
        return entityManager.createNamedQuery("StudentGetAllNameQuery",Student.class).getResultList();
-     }
+    }
 }
